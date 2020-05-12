@@ -1,6 +1,5 @@
-import {jupyterWidgetTransport} from '../transports/jupyter/jupyter-transport';
+import {jupyterWidgetTransport, processDataBuffer} from '../transports/jupyter/jupyter-transport';
 
-import {processDataBuffer} from './utils/deserialize-matrix';
 import {loadMapboxCSS, hideMapboxCSSWarning} from './utils/mapbox-utils';
 import {createContainer, createErrorBox} from './utils/css-utils';
 
@@ -59,6 +58,7 @@ export function initPlayground() {
           hideMapboxCSSWarning();
           break;
 
+        // TODO any reason this logic shouldn't be in _onDataBufferChanged in jupyter-transport.js?
         case 'json-with-binary':
           convertedJson = jsonConverter.convert(json);
           const propsWithBinary = processDataBuffer({
