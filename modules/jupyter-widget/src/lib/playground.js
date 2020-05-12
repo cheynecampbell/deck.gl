@@ -1,4 +1,4 @@
-import {jupyterWidgetTransport} from '../transports/jupyter/jupyter-widget-transport';
+import {jupyterWidgetTransport} from '../transports/jupyter/jupyter-transport';
 
 import {processDataBuffer} from './utils/deserialize-matrix';
 import {loadMapboxCSS, hideMapboxCSSWarning} from './utils/mapbox-utils';

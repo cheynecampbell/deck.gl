@@ -1,5 +1,5 @@
 import {DOMWidgetView} from '@jupyter-widgets/base';
-import {jupyterWidgetTransport} from './jupyter-widget-transport';
+import {jupyterWidgetTransport} from './jupyter-transport';
 
 export class TransportWidgetView extends DOMWidgetView {
   initialize() {

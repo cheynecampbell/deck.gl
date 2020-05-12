@@ -47,3 +47,15 @@ export function deserializeMatrix(obj, manager) {
   // Becomes the data stored within the widget model at `model.get('data_buffer')`
   return obj;
 }
+
+// TODO was this removed for a reason?
+export function processDataBuffer({dataBuffer, convertedJson}) {
+  // Takes JSON props and combines them with the binary data buffer
+  for (let i = 0; i < convertedJson.layers.length; i++) {
+    const layerId = convertedJson.layers[i].id;
+    const layer = convertedJson.layers[i];
+    // Replace data on every layer prop
+    convertedJson.layers[i] = layer.clone({data: dataBuffer[layerId]});
+  }
+  return convertedJson;
+}

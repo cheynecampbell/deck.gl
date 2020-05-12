@@ -28,7 +28,7 @@ export default class JupyterTransport extends Transport {
   // TODO - implement back-channel messaging for event handling etc
   // sendJsonMessage(json, type) {
 
-  /* 
+  /*
   getSetting(key) {
     this.widget.model.get(key);
   }
@@ -71,7 +71,7 @@ export default class JupyterTransport extends Transport {
   }
 }
 
-export const jupyterWidgetTransport = new JupyterWidgetTransport();
+export const jupyterWidgetTransport = new JupyterTransport();
 
 export function processDataBuffer({dataBuffer, convertedJson}) {
   // Takes JSON props and combines them with the binary data buffer
